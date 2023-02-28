@@ -1,14 +1,4 @@
-
-
-document.getElementById('monster').innerHTML = renderCharacter(elementId, name, avatar, health, diceScore)
-`<div class="character-card">
-    <h4 class="name"> Orc </h4>
-    <img class="avatar" src="images/orc.png"/>
-    <p class="health">health: <b> 10 </b></p>
-    <div class="dice-container"><div class="dice"> 4 </div></div>
- </div>`
- 
- const heroelementId = "hiro"
+  const heroelementId = "hiro"
  const heroname = "Wizrd"
  const heroavatar = "images/wizard.png" 
  const herohealth =  "60"
@@ -30,3 +20,4 @@ document.getElementById('monster').innerHTML = renderCharacter(elementId, name, 
 
  }
  renderCharacter(heroelementId, heroname, heroavatar, herohealth, herodiceScore)
+ renderCharacter(monsterelementId, monstername, monsteravatar, monsterhealth, monsterDiceScore)
