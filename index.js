@@ -15,12 +15,10 @@ const monster = {
     diceCount: 1
 }
 function getDiceRollArray(diceCount){
-    const newDiceRolls = []
-    for (let i = 0; i < diceCount; i ++){
-    newDiceRolls.push(Math.floor(Math.random() * 6 +1 )) 
-    }
-    return newDiceRolls
-}
+   return  new Array(diceCount).fill(0).map(function(){
+      return Math.floor(Math.random() * 6 +1 )
+    })
+} 
 
 // function for maping to map over the getDiceRollArray function
 function getDiceHtml(diceCount){
@@ -85,7 +83,9 @@ renderCharacter(monster)
 //  endOfLevelBosses.push(undefined)
 // }
 
-const endOfLevelBosses = new Array(10).fill('🍀')
+const endOfLevelBosses = new Array(10).fill('🍀').map(function(moosh){
+    return moosh
+}).join(' ')
 
 // constructor class 
-console.log(endOfLevelBosses.length)
+console.log(endOfLevelBosses)
