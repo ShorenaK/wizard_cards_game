@@ -4,7 +4,6 @@ const hero = {
     name: "Wizard", 
     avatar: "images/wizard.png", 
     health: "60", 
-    diceRoll: [3, 1, 4], 
     diceCount: 3
 }
 // object  hero
@@ -13,7 +12,6 @@ const monster = {
     name : "Orc", 
     avatar : "images/orc.png", 
     health : "10", 
-    diceRoll : [4], 
     diceCount: 1
 }
 function getDiceRollArray(diceCount){
@@ -28,7 +26,7 @@ function getDiceRollArray(diceCount){
 function getDiceHtml(diceCount){
     return getDiceRollArray(diceCount).map(function(num){
         return `<div class="dice">${num}</div>`
-    }).join(' ')
+    }).join('')
 }
 // function to render character cards
 function renderCharacter(data){
@@ -51,10 +49,7 @@ renderCharacter(hero)
 renderCharacter(monster)
 
 
-
-
-
-
+// exersises 
 // //  returning function inside of function 
 
 // // the first function 
@@ -82,3 +77,15 @@ renderCharacter(monster)
 // console.log(getWinningNumbersHtml())
 
 // // document.getElementById('winning-numbers').innerHTML = getWinningNumbersHtml().join(' )
+
+
+// const endOfLevelBosses = []
+
+// for (let i = 0; i < 10; i ++){
+//  endOfLevelBosses.push(undefined)
+// }
+
+const endOfLevelBosses = new Array(10).fill('🍀')
+
+// constructor class 
+console.log(endOfLevelBosses.length)
