@@ -1,3 +1,5 @@
+import characterData  from "./data.js"
+
 function getDiceRollArray(diceCount){
     // let newDiceRolls = [];
     // for (let i = 0; i < diceCount; i++) {
@@ -9,24 +11,6 @@ function getDiceRollArray(diceCount){
     })
 } 
 
-const characterDta = {
- // object  hero
- hero: {
-    elementId: "hero", 
-    name: "Wizard", 
-    avatar: "images/wizard.png", 
-    health: "60", 
-    diceCount: 3
-}, 
-// object  hero
-  monster:{
-    elementId : "monster", 
-    name : "Orc", 
-    avatar : "images/orc.png", 
-    health : "10", 
-    diceCount: 1
- }
-}
 
 // constructor function 
 function Character(data){
@@ -39,6 +23,7 @@ function Character(data){
         }).join('')
      }
     this.getCharacterHtml = function(){
+        // destructuring 
  const { elementId, name, avatar, health, diceCount } = this; 
 // we can use diceCount, elementId, name, avatar, health without dadta if we use distructering 
     const diceHtml = this.getDiceHtml(diceCount)
@@ -56,8 +41,8 @@ function render (){
     document.getElementById(wizerd.elementId).innerHTML = wizerd.getCharacterHtml()
     document.getElementById(orc.elementId).innerHTML = orc.getCharacterHtml()
 }
-const wizerd = new Character(characterDta.hero)
-const orc = new Character(characterDta.monster)
+const wizerd = new Character(characterData.hero)
+const orc = new Character(characterData.monster)
 render()
 
 
