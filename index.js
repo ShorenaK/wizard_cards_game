@@ -1,6 +1,5 @@
 import characterData  from "./data.js"
-
-import { Character } from "./character.js"
+import Character  from "./Character.js"
 
 function render (){
     document.getElementById(wizerd.elementId).innerHTML = wizerd.getCharacterHtml()

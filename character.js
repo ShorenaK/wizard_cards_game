@@ -1,7 +1,7 @@
-import { getDiceRollArray } from "./utils"
+import { getDiceRollArray } from "./utils.js"
 
 // constructor function 
-export function Character(data){
+ function Character(data){
     Object.assign(this, data)
    
     // function for maping to map over the getDiceRollArray function
@@ -25,3 +25,5 @@ export function Character(data){
     </div>`  
     }
 }
+
+export default Character
