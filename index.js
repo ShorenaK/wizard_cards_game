@@ -53,7 +53,6 @@ renderCharacter(hero)
 renderCharacter(monster)
 
 
-
 const animalForRlease1 = {
     name: 'Tilly', 
     species: 'tiger', 
@@ -61,7 +60,6 @@ const animalForRlease1 = {
     age: 2, 
     dataOfRelease: '03-02-2022'
 }
-
 const animalForRlease2 = {
     name: 'Nelly', 
     species: 'elephant', 
@@ -82,3 +80,32 @@ const nellyTheElephant = new Animal(animalForRlease2)
 console.log(tillyThetiger)
 console.log(nellyTheElephant)
 
+
+
+
+const hotel1 = {
+	name: 'Safari View',
+	rooms: 30,
+	stars: '⭐⭐⭐⭐⭐',
+	costPerNightAdult: 240,
+}
+
+const hotel2 = {
+	name: 'Leopard Mansion',
+	rooms: 96,
+	stars: '⭐⭐⭐',
+	costPerNightAdult: 120,
+}
+
+function NationalParkHotels(data){
+    this.name = data.name
+    this.rooms = data.rooms
+    this.starts = data.stars
+    this.costPerNightAdult = data.costPerNightAdult
+}
+// creating instance of NarionalParkHotles for each o
+// object (hotle )
+const hotel1class = new NationalParkHotels(hotel1)
+const hotel2class = new NationalParkHotels(hotel2)
+console.log(hotel1)
+console.log(hotel2)
