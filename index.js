@@ -74,9 +74,18 @@ const studentDetails = {
     discordUsername: 'JS1',
     } 
 
-    const studentDetailsCopy = {}
+function Student(data){
+    Object.assign(this, data)
+    this.summariseStudent= function(){
+        console.log(`${this.firstName}, ${this.lastName}, 
+        ${this.age}, ${this.country} ${this.email}`)
+    }
+}
 
 
-    Object.assign(studentDetailsCopy, studentDetails)
+    // const studentDetailsCopy = {}
+    // Object.assign(studentDetailsCopy, studentDetails)
+const newStudent = new Student(studentDetails)
+newStudent.summariseStudent()
 
-    console.log(studentDetailsCopy)
+console.log(newStudent)
