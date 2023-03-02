@@ -28,8 +28,7 @@ function Character(data){
 // const { elementId, name, avatar, health, diceCount } = this; 
 // we can use diceCount, elementId, name, avatar, health without dadta if we use distructering 
     const diceHtml = this.getDiceHtml(data.diceCount)
-    document.getElementById(data.elementId).innerHTML = 
-    `<div class="character-card">
+    return `<div class="character-card">
         <h4 class="name"> ${data.name} </h4>
         <img class="avatar" src="${data.avatar}" />
         <div class="health">health: <b> ${data.health} </b></div>
@@ -39,7 +38,6 @@ function Character(data){
     </div>`  
     }
 }
-
 const wizerd = new Character(hero)
 const orc = new Character(monster)
 console.log(wizerd)
@@ -59,3 +57,4 @@ function getDiceRollArray(diceCount){
 
 
 
+// document.getElementById(data.elementId).innerHTML = 
