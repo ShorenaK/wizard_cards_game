@@ -88,31 +88,44 @@ console.log(nellyTheElephant)
 tillyThetiger.summeriseAnimal()
 nellyTheElephant.summeriseAnimal()
 
-
 const hotel1 = {
 	name: 'Safari View',
 	rooms: 30,
 	stars: '⭐⭐⭐⭐⭐',
 	costPerNightAdult: 240,
+    costPerNightChild: 180
 }
-
 const hotel2 = {
 	name: 'Leopard Mansion',
 	rooms: 96,
 	stars: '⭐⭐⭐',
 	costPerNightAdult: 120,
+    costPerNightChild: 180
 }
-
 function NationalParkHotels(data){
     this.name = data.name
     this.rooms = data.rooms
     this.starts = data.stars
-    this.costPerNightAdult = data.costPerNightAdult
-   
+    this.costPerNightAdult = data.costPerNightAdult  
+    this.costPerNightChild = data.costPerNightChild
+    this.totalPrice = data.costPerNightAdult + data.costPerNightChild
+    this.summeriseHotel = function(){
+        const totalPrice = this.costPerNightAdult * 2 + this.costPerNightChild * 2
+        console.log(` 
+        A one night stay at the ${this.name}
+        for two children is ${this.costPerNightChild}
+        for two adult is ${this.costPerNightAdult} 
+        total cost of ${totalPrice}
+        `)
+    }
 }
 // creating instance of NarionalParkHotles for each o
 // object (hotle )
 const hotel1class = new NationalParkHotels(hotel1)
 const hotel2class = new NationalParkHotels(hotel2)
-console.log(hotel1)
-console.log(hotel2)
+
+hotel1class.summeriseHotel()
+hotel2class.summeriseHotel()
+
+// console.log(hotel1)
+// console.log(hotel2)
