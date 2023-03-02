@@ -14,6 +14,19 @@ const monster = {
     health : "10", 
     diceCount: 1
 }
+
+function Character(data){
+    this.elementId = data.elementId
+    this.name = data.name
+    this.avatar = data.avatar
+    this.health = data.health
+    this.diceCount = data.diceCount
+}
+
+const monster1 = new Character(monster)
+console.log(monster1)
+
+
 function getDiceRollArray(diceCount){
        // let newDiceRolls = [];
     // for (let i = 0; i < diceCount; i++) {
