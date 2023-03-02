@@ -73,14 +73,20 @@ function Animal(data){
     this.weightKg = data.weghtKg
     this.age = data.age
     this.dataOfRelease = data.dataOfRelease
+    this.summeriseAnimal = function(){
+        console.log(`${this.name} is a ${this.age} 
+        year old ${this.species} which weighs 
+        ${this.weghtKg} release into the wild on
+        ${this.dataOfRelease}`)
+    }
 }
 const tillyThetiger = new Animal(animalForRlease1)
 const nellyTheElephant = new Animal(animalForRlease2)
 
 console.log(tillyThetiger)
 console.log(nellyTheElephant)
-
-
+tillyThetiger.summeriseAnimal()
+nellyTheElephant.summeriseAnimal()
 
 
 const hotel1 = {
@@ -102,6 +108,7 @@ function NationalParkHotels(data){
     this.rooms = data.rooms
     this.starts = data.stars
     this.costPerNightAdult = data.costPerNightAdult
+   
 }
 // creating instance of NarionalParkHotles for each o
 // object (hotle )
