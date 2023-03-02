@@ -41,12 +41,8 @@ function Character(data){
 const wizerd = new Character(hero)
 const orc = new Character(monster)
 
-wizerd.getCharacterHtml()
-orc.getCharacterHtml()
-
 document.getElementById(wizerd.elementId).innerHTML = wizerd.getCharacterHtml()
 document.getElementById(orc.elementId).innerHTML = orc.getCharacterHtml()
-
 
 function getDiceRollArray(diceCount){
        // let newDiceRolls = [];
