@@ -1,19 +1,33 @@
-// object  hero
-const hero = {
+function getDiceRollArray(diceCount){
+    // let newDiceRolls = [];
+    // for (let i = 0; i < diceCount; i++) {
+    //     newDiceRolls.push(Math.floor(Math.random() * 6) + 1);
+    // }
+    // return newDiceRolls; 
+   return  new Array(diceCount).fill(0).map(function(){
+      return Math.floor(Math.random() * 6 +1 )
+    })
+} 
+
+const characterDta = {
+ // object  hero
+ hero: {
     elementId: "hero", 
     name: "Wizard", 
     avatar: "images/wizard.png", 
     health: "60", 
     diceCount: 3
-}
+}, 
 // object  hero
-const monster = {
+  monster:{
     elementId : "monster", 
     name : "Orc", 
     avatar : "images/orc.png", 
     health : "10", 
     diceCount: 1
+ }
 }
+
 // constructor function 
 function Character(data){
     Object.assign(this, data)
@@ -38,24 +52,14 @@ function Character(data){
     </div>`  
     }
 }
-const wizerd = new Character(hero)
-const orc = new Character(monster)
-
 function render (){
     document.getElementById(wizerd.elementId).innerHTML = wizerd.getCharacterHtml()
     document.getElementById(orc.elementId).innerHTML = orc.getCharacterHtml()
 }
+const wizerd = new Character(characterDta.hero)
+const orc = new Character(characterDta.monster)
 render()
-function getDiceRollArray(diceCount){
-       // let newDiceRolls = [];
-    // for (let i = 0; i < diceCount; i++) {
-    //     newDiceRolls.push(Math.floor(Math.random() * 6) + 1);
-    // }
-    // return newDiceRolls; 
-   return  new Array(diceCount).fill(0).map(function(){
-      return Math.floor(Math.random() * 6 +1 )
-    })
-} 
+
 
 
 
