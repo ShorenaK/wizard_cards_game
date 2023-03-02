@@ -15,6 +15,12 @@ const monster = {
     diceCount: 1
 }
 function getDiceRollArray(diceCount){
+       // let newDiceRolls = [];
+    // for (let i = 0; i < diceCount; i++) {
+    //     newDiceRolls.push(Math.floor(Math.random() * 6) + 1);
+    // }
+    // return newDiceRolls;
+    
    return  new Array(diceCount).fill(0).map(function(){
       return Math.floor(Math.random() * 6 +1 )
     })
@@ -47,45 +53,32 @@ renderCharacter(hero)
 renderCharacter(monster)
 
 
-// exersises 
-// //  returning function inside of function 
 
-// // the first function 
+const animalForRlease1 = {
+    name: 'Tilly', 
+    species: 'tiger', 
+    weghtKg: 56, 
+    age: 2, 
+    dataOfRelease: '03-02-2022'
+}
 
-// function getLottoNumbers(){
-//     // creating empty array 
-//     const winningNums = []
-//     // looping over the array 
-//     for (let i = 0; i < 6; i ++){
-//         winningNums.push(Math.floor(Math.random() * 60 + 1))
-//     }
-//     // returns array with the random numbers form 0 - 100 
-//     return winningNums
-// }
+const animalForRlease2 = {
+    name: 'Nelly', 
+    species: 'elephant', 
+    weghtKg: 320, 
+    age: 16, 
+    dataOfRelease: '03-02-2022'
+}
+function Animal(data){
+    this.name = data.name
+    this.species = data.species
+    this.weightKg = data.weghtKg
+    this.age = data.age
+    this.dataOfRelease = data.dataOfRelease
+}
+const tillyThetiger = new Animal(animalForRlease1)
+const nellyTheElephant = new Animal(animalForRlease2)
 
-// // creating another function to call getLottoNumbers function 
+console.log(tillyThetiger)
+console.log(nellyTheElephant)
 
-// function getWinningNumbersHtml(){
-//     return getLottoNumbers().map(function(num){
-//         // return `<div class="number">${num}</div>`
-//         return num
-//     }).join(' ')
-// }
-
-// console.log(getWinningNumbersHtml())
-
-// // document.getElementById('winning-numbers').innerHTML = getWinningNumbersHtml().join(' )
-
-
-// const endOfLevelBosses = []
-
-// for (let i = 0; i < 10; i ++){
-//  endOfLevelBosses.push(undefined)
-// }
-
-const endOfLevelBosses = new Array(10).fill('🍀').map(function(moosh){
-    return moosh
-}).join(' ')
-
-// constructor class 
-console.log(endOfLevelBosses)
