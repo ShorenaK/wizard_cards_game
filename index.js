@@ -14,7 +14,7 @@ const monster = {
     health : "10", 
     diceCount: 1
 }
-
+// constructor function 
 function Character(data){
     this.elementId = data.elementId
     this.name = data.name
@@ -22,8 +22,9 @@ function Character(data){
     this.health = data.health
     this.diceCount = data.diceCount
     this.getCharacterHtml = function(){
-
-    let diceHtml = getDiceHtml(data.diceCount)
+// const { elementId, name, avatar, health, diceCount } = this; 
+// we can use diceCount, elementId, name, avatar, health without dadta if we use distructering 
+    const diceHtml = getDiceHtml(data.diceCount)
     document.getElementById(data.elementId).innerHTML = 
     `<div class="character-card">
         <h4 class="name"> ${data.name} </h4>
