@@ -62,3 +62,21 @@ function getDiceHtml(diceCount){
     }).join('')
 }
 
+
+// using Object.assign
+
+const studentDetails = {
+    firstName: 'janaka',
+    lastName: 'siriwardena',
+    age: 28,
+    country: 'sri lanka',
+    email: 'j.siri@totalinternet.com',
+    discordUsername: 'JS1',
+    } 
+
+    const studentDetailsCopy = {}
+
+
+    Object.assign(studentDetailsCopy, studentDetails)
+
+    console.log(studentDetailsCopy)
