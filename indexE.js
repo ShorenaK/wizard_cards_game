@@ -119,3 +119,31 @@ hotel2class.summeriseHotel()
 
 // console.log(hotel1)
 // console.log(hotel2)
+
+
+
+// using Object.assign
+
+const studentDetails = {
+    firstName: 'janaka',
+    lastName: 'siriwardena',
+    age: 28,
+    country: 'sri lanka',
+    email: 'j.siri@totalinternet.com',
+    discordUsername: 'JS1',
+    } 
+
+function Student(data){
+    Object.assign(this, data)
+    this.summariseStudent= function(){
+        console.log(`${this.firstName}, ${this.lastName}, 
+        ${this.age}, ${this.country} ${this.email}`)
+    }
+}
+
+    // const studentDetailsCopy = {}
+    // Object.assign(studentDetailsCopy, studentDetails)
+const newStudent = new Student(studentDetails)
+newStudent.summariseStudent()
+
+console.log(newStudent)
