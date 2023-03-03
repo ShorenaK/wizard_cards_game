@@ -11,7 +11,11 @@ function getDiceRollArray(diceCount){
     })
 } 
 
+function getDicePlaceholderHtml(diceCount){
+  return new Array(diceCount).fill(0).map(function(){
+      return  `<div class="placeholder-dice"></div>`
+  }).join('')
+}
 
 
-
-export {getDiceRollArray}
+export {getDiceRollArray, getDicePlaceholderHtml}

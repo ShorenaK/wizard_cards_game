@@ -10,6 +10,8 @@ const wizerd = new Character(characterData.hero)
 const orc = new Character(characterData.monster)
 render()
 
+
+
  function attack(){
   render()
  }
