@@ -2,9 +2,10 @@ import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js"
 
 // constructor function 
  function Character(data){
-    let diceArray = getDicePlaceholderHtml()
+     
+     Object.assign(this, data)
 
-    Object.assign(this, data)
+     this.diceArray = getDicePlaceholderHtml(this.diceCount)
    
     // function for maping to map over the getDiceRollArray function
     this.getDiceHtml = function(diceCount){
@@ -22,7 +23,7 @@ import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js"
         <img class="avatar" src="${avatar}" />
         <div class="health">health: <b> ${health} </b></div>
         <div class="dice-container">
-            ${diceArray}
+            ${this.diceArray}
         </div>
     </div>`  
     }
