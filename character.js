@@ -9,8 +9,9 @@ import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js"
    
     // function for maping to map over the getDiceRollArray function
     this.getDiceHtml = function(diceCount){
-        return getDiceRollArray(diceCount).map(function(num){
-         return `<div class="dice">${num}</div>`
+        this.currentDiceScore = getDiceRollArray(this.diceCount)
+        this.diceArray = this.currentDiceScore.map(function(num){
+            return `<div class="dice">${num}</div>`
         }).join('')
      }
     this.getCharacterHtml = function(){
