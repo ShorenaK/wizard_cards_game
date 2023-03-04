@@ -1,4 +1,4 @@
-
+//we create new array for random genaring numbers for dice 
 
 function getDiceRollArray(diceCount){
     // let newDiceRolls = [];
@@ -11,6 +11,7 @@ function getDiceRollArray(diceCount){
     })
 } 
 
+// get diceplcaceholder for empty value 
 function getDicePlaceholderHtml(diceCount){
   return new Array(diceCount).fill(0).map(function(){
       return  `<div class="placeholder-dice"></div>`

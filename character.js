@@ -4,16 +4,18 @@ import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js"
  function Character(data){
      
      Object.assign(this, data)
-
+// for empty array 
      this.diceArray = getDicePlaceholderHtml(this.diceCount)
    
     // function for maping to map over the getDiceRollArray function
+    // specific to each character
     this.getDiceHtml = function(diceCount){
         this.currentDiceScore = getDiceRollArray(this.diceCount)
         this.diceArray = this.currentDiceScore.map(function(num){
             return `<div class="dice">${num}</div>`
         }).join('')
      }
+     // each object dicplaied 
     this.getCharacterHtml = function(){
         // destructuring 
  const { elementId, name, avatar, health, diceCount, diceArray} = this; 
