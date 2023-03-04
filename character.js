@@ -9,29 +9,38 @@ import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js"
    
     // function for maping to map over the getDiceRollArray function
     // specific to each character
-    this.getDiceHtml = function(diceCount){
+    this.getDiceHtml = function(){
         this.currentDiceScore = getDiceRollArray(this.diceCount)
         this.diceArray = this.currentDiceScore.map(function(num){
             return `<div class="dice">${num}</div>`
         }).join('')
      }
      this.takeDamage = function(attackScoreArray){
-        console.log( ` ${this.name}: ${attackScoreArray}`)
+
+    const totalAttackScore = attackScoreArray.reduce(function(total, currentNum){
+          return total + currentNum 
+        })
+        this.health -= totalAttackScore
+        if(this.health <= 0){
+            return this.health = 0 
+        }
+       
      }
      // each object dicplaied 
     this.getCharacterHtml = function(){
         // destructuring 
  const { elementId, name, avatar, health, diceCount, diceArray} = this; 
 // we can use diceCount, elementId, name, avatar, health without dadta if we use distructering 
-    const diceHtml = this.getDiceHtml(diceCount)
-    return `<div class="character-card">
-        <h4 class="name"> ${name} </h4>
-        <img class="avatar" src="${avatar}" />
-        <div class="health">health: <b> ${health} </b></div>
-        <div class="dice-container">
-            ${diceArray}
-        </div>
-    </div>`  
+return `
+<div class="character-card">
+<div class="health">health: <b> ${health} </b></div>
+    <h4 class="name"> ${name} </h4>
+    <img class="avatar" src="${avatar}" />
+    <div class="dice-container">
+        ${this.diceArray}
+    </div>
+</div>`
+
     }
 }
 
