@@ -16,7 +16,8 @@ render()
  function attack(){
  wizerd.getDiceHtml()
  orc.getDiceHtml()
-
+ wizerd.takeDamage()
+ orc.takeDamage()
   render()
  }
 document.getElementById('attack-button').addEventListener('click', attack)

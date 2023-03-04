@@ -15,6 +15,9 @@ import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js"
             return `<div class="dice">${num}</div>`
         }).join('')
      }
+     this.takeDamage = function(){
+        console.log( ` ${this.name} is damaged`)
+     }
      // each object dicplaied 
     this.getCharacterHtml = function(){
         // destructuring 
