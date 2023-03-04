@@ -15,7 +15,7 @@ import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js"
      }
     this.getCharacterHtml = function(){
         // destructuring 
- const { elementId, name, avatar, health, diceCount } = this; 
+ const { elementId, name, avatar, health, diceCount, diceArray} = this; 
 // we can use diceCount, elementId, name, avatar, health without dadta if we use distructering 
     const diceHtml = this.getDiceHtml(diceCount)
     return `<div class="character-card">
@@ -23,7 +23,7 @@ import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js"
         <img class="avatar" src="${avatar}" />
         <div class="health">health: <b> ${health} </b></div>
         <div class="dice-container">
-            ${this.diceArray}
+            ${diceArray}
         </div>
     </div>`  
     }
