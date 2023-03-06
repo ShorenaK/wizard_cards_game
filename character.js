@@ -1,19 +1,14 @@
-import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js"
-
-const getPercentage = (remainingHealth, maximumHealth)=>
-     (100 * remainingHealth) / maximumHealth
-
+import { getDiceRollArray, getDicePlaceholderHtml, getPercentage } from "./utils.js"
 
 // constructor function 
  function Character(data){
      Object.assign(this, data)
 // for empty array 
      this.diceArray = getDicePlaceholderHtml(this.diceCount)
-     
      this.maxHealth = this.health
     // function for maping to map over the getDiceRollArray function
     // specific to each character
-  
+
     this.getDiceHtml = function(){
        this.currentDiceScore = getDiceRollArray(this.diceCount)
        this.diceArray = this.currentDiceScore.map(num => 
