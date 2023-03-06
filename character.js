@@ -13,10 +13,7 @@ const getPercentage = (remainingHealth, maximumHealth)=>
      this.maxHealth = this.health
     // function for maping to map over the getDiceRollArray function
     // specific to each character
-    this.getHealthBarHtml = function(){
-        const percent = getPercentage(this.healt, this.maxHealth)
-        console.log(percent)
-    }
+  
     this.getDiceHtml = function(){
        this.currentDiceScore = getDiceRollArray(this.diceCount)
        this.diceArray = this.currentDiceScore.map(num => 
@@ -32,7 +29,14 @@ const getPercentage = (remainingHealth, maximumHealth)=>
         }
        console.log(getPercentage(this.health, this.maxHealth))
      }
-     
+     this.getHealthBarHtml = function(){
+        const percent = getPercentage(this.health, this.maxHealth)
+        return `<div class="health-bar-outer">
+        <div class="health-bar-inner ${percent < 25 ? "danger": ""}"
+            style="width: ${percent}} %;">
+        </div>
+    </div>`
+    }
      // each object dicplaied 
     this.getCharacterHtml = function(){
         // destructuring 
@@ -42,10 +46,11 @@ const healthBar = this.getHealthBarHtml()
 return `
 <div class="character-card">
 <div class="health">health: <b> ${health} </b></div>
+ ${healthBar}
     <h4 class="name"> ${name} </h4>
     <img class="avatar" src="${avatar}" />
     <div class="dice-container">
-        ${this.diceArray}
+        ${diceArray}
     </div>
 </div>`
 
