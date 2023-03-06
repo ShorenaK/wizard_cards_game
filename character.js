@@ -15,9 +15,9 @@ import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js"
      }
      this.takeDamage = function(attackScoreArray){
 
-    const totalAttackScore = attackScoreArray.reduce(function(total, currentNum){
+    const totalAttackScore = attackScoreArray.reduce((total, currentNum)=>{
           return total + currentNum 
-        })
+    })
         this.health -= totalAttackScore
         if(this.health <= 0){
             this.dead = true 
