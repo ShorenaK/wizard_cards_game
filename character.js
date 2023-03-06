@@ -22,10 +22,8 @@ import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js"
         })
         this.health -= totalAttackScore
         if(this.health <= 0){
-            let dead = true 
-            return this.health = 0 === dead
-
-            console.log(dead)
+            this.dead = true 
+            this.health = 0
         }
        
      }
