@@ -17,7 +17,10 @@ function attack(){
 }
 
 function endGame(){
-    console.log('Game is over')
+    const endMessage = wizerd.health === 0 && orc.health === 0 ?  
+     `"No victors - all creatures are dead"`
+      : wizerd.health > 0 ? `"The Wizard Wins"`
+      : `"The Orc is Victorious"`
 }
 document.getElementById('attack-button').addEventListener('click', attack)
 
