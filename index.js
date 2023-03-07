@@ -4,7 +4,7 @@ import characterData from './data.js'
 import Character from './Character.js'
 
 let monstersArray = ["orc", "demon", "goblin"]
-
+let isWating = false
 function getNewMonster() {
     const nextMonsterData = characterData[monstersArray.shift()]
     return nextMonsterData ? new Character(nextMonsterData) : {}
@@ -20,41 +20,53 @@ is killed.
 */
 
 function attack() {
-    wizard.getDiceHtml()
-    monster.getDiceHtml()
-    wizard.takeDamage(monster.currentDiceScore)
-    monster.takeDamage(wizard.currentDiceScore)
-    render()
-    
-        /*change the code below this line*/
-    if(wizard.dead){
-        endGame()
-    }
-    else if(monster.dead){
-        if(monstersArray.length > 0){
-            monster = getNewMonster()
-            render()
-        }
-        else{
+    if(!isWating){
+        wizard.getDiceHtml()
+        monster.getDiceHtml()
+        wizard.takeDamage(monster.currentDiceScore)
+        monster.takeDamage(wizard.currentDiceScore)
+        render()
+        
+            /*change the code below this line*/
+        if(wizard.dead){
             endGame()
         }
+        else if(monster.dead){
+            isWating = true
+            if(monstersArray.length > 0){
+                setTimeout(()=>{
+                  monster = getNewMonster()
+                  render()
+                  isWating = false
+                }, 1500)
+               
+            }
+            else{
+                endGame()
+            }
+        }
     }
+  
 }
 
 function endGame() {
+    isWating = true
     const endMessage = wizard.health === 0 && monster.health === 0 ?
         "No victors - all creatures are dead" :
         wizard.health > 0 ? "The Wizard Wins" :
-            "The Orc is Victorious"
+            "The Monsters is Victorious"
 
     const endEmoji = wizard.health > 0 ? "🔮" : "☠️"
-    document.body.innerHTML = `
+    setTimeout (()=>{
+        document.body.innerHTML = `
         <div class="end-game">
             <h2>Game Over</h2> 
             <h3>${endMessage}</h3>
             <p class="end-emoji">${endEmoji}</p>
         </div>
         `
+    }, 1500)
+   
 }
 
 document.getElementById("attack-button").addEventListener('click', attack)
