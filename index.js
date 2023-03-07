@@ -3,7 +3,14 @@ import Character  from "./Character.js"
 import { getDiceRollArray } from "./utils.js"
 // new instance of class 
 
+let monstersArray = ["orc", "demon", "goblin"];
 
+
+function getNewMontser(){
+     //characterData[orc]
+    const nextMonsterData = characterData[monstersArray.shift()]
+   return  nextMonsterData ? new Character(nextMonsterData) : {}
+}
 // function for button 
 function attack(){
     wizerd.getDiceHtml()
@@ -37,7 +44,8 @@ function render (){
     document.getElementById('monster').innerHTML = orc.getCharacterHtml()
 }
 
-
+ 
 const wizerd = new Character(characterData.hero)
-const orc = new Character(characterData.monster)
+let monster = getNewMontser()
+
 render()
